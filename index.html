@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactor Startup Checklist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            background: #2d2d2d;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #444;
+        }
+        h1 { color: #4CAF50; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
+        h2 { color: #ff9800; margin-top: 30px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px 0;
+            border-bottom: 1px solid #3d3d3d;
+            transition: background 0.2s;
+        }
+        .step:hover { background: #353535; }
+        input[type="checkbox"] {
+            margin-right: 15px;
+            margin-top: 5px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .step-text { cursor: pointer; }
+        input[type="checkbox"]:checked + .step-text {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .controls {
+            margin-top: 40px;
+            position: sticky;
+            bottom: 20px;
+            background: #2d2d2d;
+            padding: 15px;
+            border-top: 2px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        button:hover { background-color: #d32f2f; }
+        .counter { font-weight: bold; color: #4CAF50; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Reactor Startup Protocol</h1>
+    
+    <div id="checklist">
+        <h2>Phase 1: Pre-Startup Configuration</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">01. Obtain and insert the <b>Bypass Key</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">02. Energize <b>Breaker 64B-M</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">03. Energize <b>Breaker 18M-G1</b> (Bypass Key req).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">04. Prime <b>Generator G1</b> to < 64A.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">05. <b>Offload</b> generator.</span></div>
+
+        <h2>Phase 2: Cooling & Steam Preparation</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">06. Enable <b>Coolant Pump A1</b> (Speed 3).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">07. Open <b>Bypass Valve</b> and <b>Turbine A-B Bleed</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">08. Open <b>Turbine A Bypass</b> to 100%.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">09. <b>Deaerators:</b> Inlet 75%, Relief 15%, Temp < 400°F, Pressure < 300 PSI.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">10. Open <b>Auto Feed Limiter Valve</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">11. Set <b>Circ Pumps A1 & A2</b> to Speed 3.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">12. Open all <b>Isolation Valves</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">13. Disable <b>OCC Heat Exchangers</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">14. Set Reactor to <b>Mode 1</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">15. Disable <b>OCC Circ Pumps</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">16. Set <b>Auto Hotwell Level</b> to 35%.</span></div>
+
+        <h2>Phase 3: Reactor Startup</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">17. Withdraw <b>Shutdown Control Rods</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">18. Enable <b>Nitrogen Valve</b> (Target 1,500 PSI).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">19. Set <b>Auto Control Rods</b> to 2,100 MW.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">20. Withdraw rods to reach <b>2,100 MW Thermal</b>.</span></div>
+
+        <h2>Phase 4: Turbine A Synchronization</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">21. <b>Temp > 200°F:</b> Pump 1 & Condensate 1 (Speed 2).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">22. Notify Engineering & <b>Disengage Turbine A</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">23. Enable Synchroscope & <b>Inlet Valve 100%</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">24. Adjust rods to prevent power drop.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">25. Reduce <b>Bypass</b> to 20%.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">26. <b>Auto Bypass</b> -> 0000.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">27. <b>SYNC:</b> +1790 RPM & Needle in Red Zone.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">28. <b>Auto Bypass</b> -> 0100.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">29. Wait 10s -> Energize <b>Breaker 64A-M</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">30. Notify Engineering to reset breakers.</span></div>
+
+        <h2>Phase 5: Turbine B Prep</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">31. <b>Pump A2</b> (Spd 3) | <b>Pump A3</b> (Spd 1).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">32. Mirror settings to <b>Coolant B Pumps</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">33. Enable <b>Turbine B Bypass Valve</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">34. Set <b>Auto Rods</b> to 3,000 MW.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">35. Set Reactor to <b>Mode 2</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">36. <b>Circ B1 & B2</b> -> Speed 1.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">37. <b>At 3,000 MW:</b> B1 & B2 -> Speed 2.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">38. <b>Condensate 2 & Feedwater 2</b> -> Speed 1.</span></div>
+
+        <h2>Phase 6: Turbine B Synchronization</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">39. Notify Engineering & <b>Disengage Turbine B</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">40. Enable Synchroscope & <b>Inlet Valve 40%</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">41. <b>At +1000 RPM:</b> Auto Control -> 0000.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">42. <b>SYNC:</b> +1790 RPM & Needle in Red Zone.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">43. <b>Auto Control</b> -> 0100.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">44. <b>Precision Control:</b> Open Inlet 100%.</span></div>
+
+        <h2>Phase 7: Final Ascension & Grid Sync</h2>
+        <div class="step"><input type="checkbox"><span class="step-text">45. Set <b>Auto Rods</b> to 4,100 MW.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">46. Withdraw Control Rods.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">47. <b>At +3,200 MW:</b> B1/B2 (Spd 3) | C1/C2 (Spd 1).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">48. <b>At +3,500 MW:</b> C1/C2 -> Speed 2.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">49. <b>Feedwater 2 & Condensate 2</b> -> Speed 2.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">50. Achieve <b>4,100 MW</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">51. Set Turbine <b>Auto Bypass</b> values to 600.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">52. Await Grid (+1,000 MW).</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">53. Notify Grid Control & <b>Connect</b>.</span></div>
+        <div class="step"><input type="checkbox"><span class="step-text">54. Adjust output to demand.</span></div>
+    </div>
+
+    <div class="controls">
+        <div>Progress: <span class="counter" id="count">0</span> / 54</div>
+        <button onclick="resetChecklist()">Reset Checklist</button>
+    </div>
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const countDisplay = document.getElementById('count');
+
+    function updateCount() {
+        const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        countDisplay.textContent = checked;
+        // Optional: change color when finished
+        countDisplay.style.color = (checked === 54) ? "#00e5ff" : "#4CAF50";
+    }
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', updateCount);
+    });
+
+    function resetChecklist() {
+        if(confirm("Are you sure you want to reset the startup sequence?")) {
+            checkboxes.forEach(cb => cb.checked = false);
+            updateCount();
+            window.scrollTo(0, 0);
+        }
+    }
+</script>
+
+</body>
+</html>
