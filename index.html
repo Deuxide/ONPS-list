@@ -23,7 +23,17 @@
             border: 1px solid #444;
         }
         h1 { color: #4CAF50; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; margin-top: 0;}
-        h2 { color: #ff9800; margin-top: 30px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { color: #ff9800; margin-top: 15px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        p { margin: 0; font-weight: 600;}
+        a {
+            color: white; 
+            margin: 0; 
+            font-weight: 600; 
+
+            &:hover { opacity: 0.67; }
+        }
+        
         .step {
             display: flex;
             align-items: flex-start;
@@ -67,6 +77,8 @@
         }
         button:hover { background-color: #d32f2f; }
         .counter { font-weight: bold; color: #4CAF50; }
+
+        h3 { text-align: center; margin: 8px 0; }
     </style>
 </head>
 <body>
@@ -75,6 +87,10 @@
     <h1>Reactor Startup Protocol</h1>
     
     <div id="checklist">
+        <p>Credit :</p>
+        <a href="https://www.youtube.com/watch?v=Rbn4cYBEJ6s&t=1s">TheChefGuy,</a>
+        <a>&nbsp</a>
+        <a href="https://www.youtube.com/@Mr.Rust12">Mr.Rust12 comment</a>
         <h2>Phase 1: Pre-Startup Configuration</h2>
         <div class="step"><input type="checkbox"><span class="step-text">01. Obtain and insert the <b>Bypass Key</b>.</span></div>
         <div class="step"><input type="checkbox"><span class="step-text">02. Energize <b>Breaker 64B-M</b>.</span></div>
@@ -142,6 +158,7 @@
         <div class="step"><input type="checkbox"><span class="step-text">52. Await Grid (+1,000 MW).</span></div>
         <div class="step"><input type="checkbox"><span class="step-text">53. Notify Grid Control & <b>Connect</b>.</span></div>
         <div class="step"><input type="checkbox"><span class="step-text">54. Adjust output to demand.</span></div>
+        <h3>made by Davix</h3>
     </div>
 
     <div class="controls">
